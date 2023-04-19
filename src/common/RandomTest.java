@@ -6,7 +6,7 @@ public class RandomTest {
     }
 
     static void check(){
-        String s = "Hello";
-        System.out.println(s.substring(0,s.length()));
+        String s = "()[";
+        System.out.println(s.substring(0, s.length()-1));
     }
 }
