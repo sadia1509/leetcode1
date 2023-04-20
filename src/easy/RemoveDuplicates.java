@@ -24,6 +24,25 @@ public class RemoveDuplicates {
     }
 
 
+
+    public int removeElement(int[] nums, int val) {
+        int counter=0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == val) {
+                int j=i;
+                while (j<nums.length-1){
+                    nums[j]=nums[++j];
+                }
+                counter++;
+            }
+        }
+        System.out.println( nums.length - counter + " --- " +Arrays.toString(nums)  );
+    return nums.length - counter;
+    }
+
+
+
+    /*
     public int removeElement(int[] nums, int val) {
         int counter=0;
         for (int i = 0; i < nums.length; i++) {
@@ -35,6 +54,7 @@ public class RemoveDuplicates {
         for (int i: nums) {
             System.out.print(i + " ");
         }
+        System.out.println(counter);
         return counter;
     }
 
@@ -43,4 +63,6 @@ public class RemoveDuplicates {
         arr.remove(index);
         return arr.stream().mapToInt(Integer::intValue).toArray();
     }
+
+     */
 }

@@ -2,7 +2,18 @@ package easy;
 
 import common.ListNode;
 
+import java.util.Arrays;
+
 public class MergeTwoSortedList {
+
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        //int [] merged = new int[m+n];
+        //System.arraycopy(nums1, 0,  merged, 0, m);
+        System.arraycopy(nums2, 0,  nums1, m, n);
+        Arrays.sort(nums1);
+        System.out.println(Arrays.toString(nums1));
+    }
 
     //list1 = 1,2,4
     ListNode merge(ListNode list1, int value) {

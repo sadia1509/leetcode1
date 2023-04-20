@@ -13,4 +13,13 @@ public class PalindromeNumber {
         }
         return number==reverse;
     }
+
+    public boolean isPalindrome(String s) {
+        s=s.toLowerCase().replaceAll("[^a-z0-9]", "");
+        for (int front=0, end=s.length()-1; front<s.length(); front++,end--)
+            if(s.charAt(front) != s.charAt(end)) return false;
+        return true;
+    }
+
+
 }

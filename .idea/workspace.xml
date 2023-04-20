@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d7ead3c-6a5a-47b5-9228-8e08546f91ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/AddBinary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/Finding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/LengthOfLastWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/MergeTwoSortedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/PlusOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/RemoveDuplicates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/easy/ValidParenthesis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/ClimbingStairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/DeleteDuplicateFromList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/MajorityElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/PascalTriangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/SingleNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/easy/StockSellBuy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/MainHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/MainHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/RandomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/RandomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/easy/LongestPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/LongestPrefix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/easy/AddBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/AddBinary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/easy/MergeTwoSortedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/MergeTwoSortedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/easy/PalindromeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/PalindromeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/easy/RemoveDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/easy/RemoveDuplicates.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,12 +104,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/easy/MergeTwoSortedList.java</url>
-          <line>11</line>
+          <line>22</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/easy/RemoveDuplicates.java</url>
-          <line>27</line>
+          <line>46</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -124,12 +124,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/easy/MergeTwoSortedList.java</url>
-          <line>7</line>
+          <line>18</line>
           <properties class="easy.MergeTwoSortedList" method="merge">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/easy/ClimbingStairs.java</url>
+          <line>16</line>
+          <properties class="easy.ClimbingStairs" method="climbStairs">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
