@@ -20,9 +20,26 @@ public class MainHelper {
 
     public static void runEasy() {
 
+        RemoveLetter removeLetter=new RemoveLetter();
+        System.out.println(removeLetter.equalFrequency("aaabbddddc"));
+        /*
+        SortPeople sortPeople= new SortPeople();
+        String [] arr= sortPeople.sortPeople(new String[]{"IEO","Sgizfdfrims","QTASHKQ","Vk","RPJOFYZUBFSIYp","EPCFFt","VOYGWWNCf","WSpmqvb"}, new int[] {17233,32521,14087,42738,46669,65662,43204,8224});
+        for(String i : arr) System.out.println(i);
+
+        MaxColumn maxColumn = new MaxColumn();
+        int [] arr = maxColumn.findColumnWidth(new int[][]{{-15,1,3},{15,7,12},{5,6,-2}});
+        for(int i : arr) System.out.println(i);
+
+        LongestSubstring longestSubstring= new LongestSubstring();
+        System.out.println(longestSubstring.findTheLongestBalancedSubstring("001"));
+
+        PrimeNumbers primeNumbers = new PrimeNumbers();
+        System.out.println(primeNumbers.diagonalPrime(new int[][]{{1,2,3}, {5,18,7}, {9,11,10}}));
+
         MajorityElement majorityElement= new MajorityElement();
         System.out.println(majorityElement.majorityElement(new int[]{3,2,3}));
-        /*
+
         SingleNumber singleNumber= new SingleNumber();
         System.out.println(singleNumber.singleNumber(new int[]{1,1,2,2,3,4,4}));
 
