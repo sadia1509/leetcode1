@@ -5,7 +5,25 @@ import dataStructure.linear.Array;
 public class DSA {
     public static void runEasy() {
         Array array = new Array();
-        array.subArray(new int[]{1, 4, 0, 0, 3, 10, 5}, 7);
+        array.equilibriumIndex(new int[]{-7, 1, 5, 2, -4, 3, 0});
+//        array.minIncrement(new int[]{4, 7, 19, 16}, 3);
+//        array.tripletSum(new int[]{1, 2, 3, 4, 5}, 9);
+//        array.peakElement(new int[]{10, 20, 15, 2, 23, 90, 67});
+//        array.twoPointers(new int[]{10, 20, 35, 50, 75, 80}, 70);
+//        array.majorityElement(new int[]{3, 3, 4, 2, 4, 4, 2, 4, 4});
+//        array.mergeTwoArraysSorted(new int[]{1, 5, 9, 10, 15, 20}, new int[]{2, 3, 8, 13});
+//        array.sortZeroOneTwo(new int[]{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1});
+//        array.inversionCount(new int[]{1, 20, 6, 4, 5});
+//        array.smallestSubarray(new int[]{1, 4, 45, 6, 0, 19}, 51);
+//        array.profitArray(new int[]{10, 22, 5, 75, 65, 80});
+//        array.updateArray(new int[]{10, 5, 20, 40}, 2 , 2 ,30);
+//        array.smallestMissingNumber(new int[]{0, 1, 2, 3}, 4,5);
+//        array.kthLargestSum(new int[]{20, -5, -1}, 3);
+//        array.sortedInRotation(new int []{7, 9, 11, 12, 15});
+//        array.reorderingTheArrays(new int[]{10, 11, 12}, new int[]{1, 0, 2});
+//        array.rearrangePosNeg(new int[]{-1, 2, -3, 4, 5, 6, -7, 8, 9});
+//        array.rearrange(new int[]{19, 7, 0, 3, 18, 15, 12, 6, 1, 8, 11, 10, 9, 5, 13, 16, 2, 14, 17, 4});
+//        array.subArray(new int[]{1, 4, 0, 0, 3, 10, 5}, 7);
 //        array.leadersInArray(new int[]{16, 17, 4, 3, 5, 2});
 //        array.oneTwo(new int[]{2, 3, 5, 4, 5, 3, 4});
 //        array.distinctElement(new int[]{10, 100, 100, 100, 300});
