@@ -1,11 +1,32 @@
 package common;
 
-import dataStructure.linear.Array;
+import dataStructure.linear.*;
+
+import java.util.List;
 
 public class DSA {
     public static void runEasy() {
-        Array array = new Array();
-        array.equilibriumIndex(new int[]{-7, 1, 5, 2, -4, 3, 0});
+        LinkedList linkedList = new LinkedList();
+        linkedList.deleteNodeDoubly(linkedList.makeDoublyLinkedList(new int[]{5, 4, 3, 2, 1}), linkedList.makeLinkedList(new int[]{1}));
+//        linkedList.circularLinkedListTraversal(linkedList.makeCircularLinkedList(new int[]{5, 4, 3, 2, 1}));
+//        linkedList.sizeOfDoubly(linkedList.makeDoublyLinkedList(new int[]{5, 4, 3, 2, 1}));
+//        linkedList.reverseDoublyLinkedList(linkedList.makeDoublyLinkedList(new int[]{5, 4, 3, 2, 1}));
+//        linkedList.exchangeFirstLast(linkedList.makeCircularLinkedList(new int[]{5, 4, 3, 2, 1}));
+//        linkedList.convertToCircular(linkedList.makeLinkedList(new int[]{9, 1, 2, 10, 3, 7}));
+//        linkedList.countCircularNodes(linkedList.makeCircularLinkedList(new int[]{9, 1, 2, 10, 3, 7}));
+//        linkedList.circularLinkedListCheck(linkedList.makeLinkedList(new int[]{1, 1, 2, 10, 3, 7}));
+//        linkedList.circularLinkedListCheck(linkedList.makeCircularLinkedList(new int[]{1, 1, 2, 10, 3, 7}));
+//        linkedList.elemCount(linkedList.makeLinkedList(new int[]{1, 1, 2, 10, 3, 7, 1}), 1);
+//        linkedList.middlePrint(linkedList.makeLinkedList(new int[]{1, 1, 2, 10, 3, 7}));
+
+
+
+
+//        Array array = new Array();
+//        array.sqrtDecompositionAlgorithm(new int[]{1, 1, 2, 1, 3, 4, 5, 2, 8}, 0, 8);
+//        array.moAlgorithm(new int[]{1, 1, 2, 1, 3, 4, 5, 2, 8}, List.of(new int[]{0, 4}, new int[]{1, 3}, new int[]{2, 4}) );
+//        array.mostOccurrence(new int[]{7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9}, 4);
+//        array.equilibriumIndex(new int[]{-7, 1, 5, 2, -4, 3, 0});
 //        array.minIncrement(new int[]{4, 7, 19, 16}, 3);
 //        array.tripletSum(new int[]{1, 2, 3, 4, 5}, 9);
 //        array.peakElement(new int[]{10, 20, 15, 2, 23, 90, 67});

@@ -6,6 +6,8 @@ import common.Utils;
 import java.util.*;
 
 public class Array {
+
+    /* **************EASY************** */
     void shiftFromZtoA(int[] arr, int from, int to) {
         while (from < to) {
             arr[from] = arr[from + 1];
@@ -311,14 +313,14 @@ public class Array {
     //Sort an array of 0s, 1s and 2s
     public void sortZeroOneTwo(int[] arr) {
         int[] trackerArray = new int[3];
-        for (int i = 0; i < arr.length; i++)  trackerArray[arr[i]]++;
+        for (int i = 0; i < arr.length; i++) trackerArray[arr[i]]++;
         for (int j = 0; j < trackerArray.length; j++)
             for (int k = 0; k < trackerArray[j]; k++)
                 System.out.print(j + " ");
     }
 
     //Merge two sorted arrays with O(1) extra space
-    public void mergeTwoArraysSorted(int [] arr1, int [] arr2){
+    public void mergeTwoArraysSorted(int[] arr1, int[] arr2) {
         int i = 0, j = 0, k = arr1.length - 1;
         while (i <= k && j < arr1.length) {
             if (arr1[i] < arr2[j]) i++;
@@ -336,40 +338,40 @@ public class Array {
     }
 
     //Majority Element
-    public void majorityElement(int [] arr){
+    public void majorityElement(int[] arr) {
         Map<Integer, Integer> trackerMap = new LinkedHashMap<>();
-        for (int i:arr){
-            if(trackerMap.containsKey(i)) trackerMap.put(i, trackerMap.get(i)+1);
+        for (int i : arr) {
+            if (trackerMap.containsKey(i)) trackerMap.put(i, trackerMap.get(i) + 1);
             else trackerMap.put(i, 1);
-            if(trackerMap.get(i) > arr.length/2) System.out.println(i);
+            if (trackerMap.get(i) > arr.length / 2) System.out.println(i);
         } //System.out.println("No Majority Element");
     }
 
     //Two Pointers Technique
-    public void twoPointers(int [] arr, int x){
-        for(int firstPointer=0; firstPointer<arr.length; firstPointer++)
-            for (int lastPointer = arr.length-1; firstPointer < lastPointer; lastPointer--)
+    public void twoPointers(int[] arr, int x) {
+        for (int firstPointer = 0; firstPointer < arr.length; firstPointer++)
+            for (int lastPointer = arr.length - 1; firstPointer < lastPointer; lastPointer--)
                 if (arr[firstPointer] + arr[lastPointer--] == x) System.out.println(true);
     }
 
     //Find a peak element
-    public void peakElement(int [] arr){
-        for (int i=1; i<arr.length-1; i++)
-            if(arr[i-1]<arr[i] && arr[i+1]<arr[i])
+    public void peakElement(int[] arr) {
+        for (int i = 1; i < arr.length - 1; i++)
+            if (arr[i - 1] < arr[i] && arr[i + 1] < arr[i])
                 System.out.println(arr[i]);
     }
 
     //Find a triplet that sum to a given value
     public void tripletSum(int[] arr, int sum) {
         Arrays.sort(arr);
-        int count =0;
+        int count = 0;
         List<Integer> triplets = new ArrayList<>();
-        for (int i=arr.length-1; i>=0; i--){
-            if(arr[i] <= sum) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] <= sum) {
                 sum -= arr[i];
                 triplets.add(arr[i]);
                 count++;
-                if(sum==0 && count<3){
+                if (sum == 0 && count < 3) {
                     sum += arr[i];
                     triplets.remove(--count);
                 }
@@ -379,24 +381,63 @@ public class Array {
     }
 
     //Minimum increment by k operations to make all elements equal
-    public void minIncrement(int [] arr, int k){
-        int min= Integer.MAX_VALUE, sum =0;
-        for (int i : arr){
+    public void minIncrement(int[] arr, int k) {
+        int min = Integer.MAX_VALUE, sum = 0;
+        for (int i : arr) {
             min = Math.min(min, i);
             sum += i;
         }
         // TODO : result needs to check
-        System.out.println(sum - k*min);
+        System.out.println(sum - k * min);
     }
 
     //Equilibrium index of an array
-    public void equilibriumIndex (int [] arr){
-        int sumLeft=0, sumRight=0, i, j;
-        for (i=0, j= arr.length-1; i<arr.length/2; i++, j--){
-           sumLeft += arr[i];
-           sumRight += arr[j];
+    public void equilibriumIndex(int[] arr) {
+        int sumLeft = 0, sumRight = 0, i, j;
+        for (i = 0, j = arr.length - 1; i < arr.length / 2; i++, j--) {
+            sumLeft += arr[i];
+            sumRight += arr[j];
         }
         if (sumLeft == sumRight) System.out.println(i);
         else System.out.println(-1);
     }
+
+    /* **************HARD************** */
+    //Find k numbers with most occurrences in the given array
+    public void mostOccurrence(int[] arr, int k) {
+        Map<Integer, Integer> trackerMap = new HashMap<>();
+        for (int i : arr) {
+            if (trackerMap.containsKey(i)) trackerMap.put(i, trackerMap.get(i) + 1);
+            else trackerMap.put(i, 1);
+        }
+        trackerMap.entrySet().stream()
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())) // Reverse order comparator
+                .limit(k)
+                .forEach(entry -> System.out.print(entry.getKey() + ":" + entry.getValue() + " | "));
+    }
+
+    //MO’s Algorithm
+    public void moAlgorithm(int [] arr, List< int []> queries){
+        for(int [] query : queries ){
+            int sum =0, i=query[0];
+            while(i<=query[1]) sum += arr[i++];
+            System.out.println("Sum of arr[] elements in range ["+query[0] +","+query[1]+"] is "+ sum);
+        }
+    }
+
+    //Square Root (Sqrt) Decomposition Algorithm
+    public void sqrtDecompositionAlgorithm(int [] arr, int from, int to){
+        int len = (int) Math.sqrt(arr.length-1) + 1, sum =0;
+        int [] sumArr = new int[len];
+        for(int i=0; i<arr.length; i++) sumArr[i/len] += arr[i];
+        while(from <= to){
+            if(from%len==0 && from+len -1 <= to) {
+                sum += sumArr[from/len];
+                from += len;
+            } else sum += arr[from++];
+        } System.out.println(sum);
+    }
+
+    //Sparse Table
+    
 }
