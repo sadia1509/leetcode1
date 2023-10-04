@@ -1,5 +1,9 @@
 package dataStructure.linear;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 class Node {
     public int data;
     public Node next, prev;
@@ -51,6 +55,7 @@ public class LinkedList {
 
     public void printLinkedList(Node head) {
         for (Node n = head; n != null; n = n.next) System.out.print(n.data + " ");
+        System.out.println();
     }
 
     public void printLinkedListReversed(Node head) {
@@ -186,7 +191,92 @@ public class LinkedList {
     }
 
 
+    //Prepare a cycle in a linked list
+    public Node circleLinkedList() {
+        Node n2 = new Node(2, null);
+        Node n5 = new Node(5, n2);
+        Node n4 = new Node(4, n5);
+        Node n3 = new Node(3, n4);
+        n2.next = n3;
+        Node n1 = new Node(1, n2);
+        return n1;
+    }
+
     /* **************MEDIUM************** */
     //Detect loop in a linked list
+    public void detectLoop(Node head) {
+        Map<Node, Integer> trackermap = new HashMap<>();
+        for (Node n = head; n.next != head && n.next != null; n = n.next) {
+            if (trackermap.containsKey(n)) {
+                System.out.println("There is a circle");
+                break;
+            }
+            trackermap.put(n, n.data);
+        }
+    }
+
+    //Find length of loop/cycle in given Linked List
+    public void detectLoopLength(Node head) {
+        Map<Node, Integer> trackermap = new LinkedHashMap<>();
+        int counter = 0;
+        Node prev = null;
+        for (Node n = head; n.next != head && n.next != null; n = n.next) {
+            if (trackermap.containsKey(n)) {
+                System.out.println(trackermap.get(prev) - trackermap.get(n) + 1);
+                break;
+            }
+            trackermap.put(n, ++counter);
+            prev = n;
+        }
+//        trackermap.entrySet().stream().forEach(entry -> System.out.print(entry.getKey().data + ":" + entry.getValue() + " | "));
+    }
+
+    //Remove duplicates from a sorted linked list
+    public void removeDuplicates(Node head) {
+        printLinkedList(head);
+        Node current = head, n = head;
+        while (n.next != null) {
+            if (current.data != n.next.data) {
+                current = n.next;
+                n = n.next;
+                continue;
+            }
+            if (current.data == n.next.data) n.next = n.next.next;
+            else n = n.next;
+        }
+        printLinkedList(head);
+    }
+
+    //Intersection of two Sorted Linked Lists
+    public void intersectionTwoLinkedList(Node head1, Node head2) {
+        Node n, m, head = null, tail = null;
+        if (getLength(head1) < getLength(head1)) {
+            n = head1;
+            m = head2;
+        } else {
+            n = head2;
+            m = head1;
+        }
+        while (n != null && m!=null) {
+            if (n.data == m.data) {
+                if (head == null) {
+                    head = new Node(n.data, null);
+                    tail = head;
+                } else {
+                    Node k = new Node(n.data, null);
+                    tail.next = k;
+                    tail = tail.next;
+                }
+                n = n.next;
+                m = m.next;
+            }
+            else if (n.data < m.data) n = n.next;
+            else m = m.next;
+        }
+        if(head!=null) printLinkedList(head);
+        else System.out.println("No intersection found");
+    }
+
+    //QuickSort on Singly Linked List
 
 }
