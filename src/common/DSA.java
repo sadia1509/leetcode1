@@ -7,7 +7,14 @@ import java.util.List;
 public class DSA {
     public static void runEasy() {
         LinkedList linkedList = new LinkedList();
-        linkedList.intersectionTwoLinkedList(linkedList.makeLinkedList(new int[]{4,5}), linkedList.makeLinkedList(new int[]{1,2,4,5,6}));
+        linkedList.modifySingly(linkedList.makeLinkedList(new int[]{10,4,5,3,6}));
+//        linkedList.rotateLinkedList(linkedList.makeDoublyLinkedList(new int[]{1,2,3,4,5}),3);
+//        linkedList.removeDuplicate(linkedList.makeDoublyLinkedList(new int[]{1,2,3,2,2,4,2,2,4,4,5}));
+//        linkedList.insertInSortedDoubly(linkedList.makeDoublyLinkedList(new int[]{2,4,5,6,8,9}), 11);
+//        linkedList.pairSum(linkedList.makeDoublyLinkedList(new int[]{1,2,4,5,6,8,9}), 7);
+//        linkedList.deletionCircular(linkedList.makeCircularLinkedList(new int[]{1,2,3,4,5,6}), 6);
+//        linkedList.splitInHalves(linkedList.makeCircularLinkedList(new int[]{1,2,3,4,5,6}));
+//        linkedList.intersectionTwoLinkedList(linkedList.makeLinkedList(new int[]{4,5}), linkedList.makeLinkedList(new int[]{1,2,4,5,6}));
 //        linkedList.removeDuplicates(linkedList.makeLinkedList(new int[]{1,2,4}));
 //        linkedList.detectLoopLength(linkedList.circleLinkedList());
 //        linkedList.detectLoop(linkedList.circleLinkedList());

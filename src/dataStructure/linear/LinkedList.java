@@ -1,8 +1,6 @@
 package dataStructure.linear;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 class Node {
     public int data;
@@ -86,6 +84,14 @@ public class LinkedList {
             length++;
         } while (n != head);
         return length;
+    }
+
+    public Node getIndexedValue(Node head, int k) {
+        int i = 0;
+        for (Node n = head; n != null && n.next != head; n = n.next, i++) {
+            if (i == k) return n;
+        }
+        return null;
     }
 
     /* **************EASY************** */
@@ -257,7 +263,7 @@ public class LinkedList {
             n = head2;
             m = head1;
         }
-        while (n != null && m!=null) {
+        while (n != null && m != null) {
             if (n.data == m.data) {
                 if (head == null) {
                     head = new Node(n.data, null);
@@ -269,14 +275,130 @@ public class LinkedList {
                 }
                 n = n.next;
                 m = m.next;
-            }
-            else if (n.data < m.data) n = n.next;
+            } else if (n.data < m.data) n = n.next;
             else m = m.next;
         }
-        if(head!=null) printLinkedList(head);
+        if (head != null) printLinkedList(head);
         else System.out.println("No intersection found");
     }
 
-    //QuickSort on Singly Linked List
+    //QuickSort on Singly Linked List TODO
+    //Split a Circular Linked List into two halves
+    public void splitInHalves(Node head) {
+        int length = getCircularLength(head);
+        Node n = head, head1 = null, head2 = null, tail1 = null, tail2 = null;
+        for (int i = 0; i < length; i++, n = n.next) {
+            if (i >= length / 2) {
+                if (head2 == null) {
+                    head2 = new Node(n.data, null);
+                    tail2 = head2;
+                } else {
+                    Node m = new Node(n.data, null);
+                    tail2.next = m;
+                    tail2 = tail2.next;
+                }
+                if (i == length - 1) tail2.next = head2;
+            } else {
+                if (head1 == null) {
+                    head1 = new Node(n.data, null);
+                    tail1 = head1;
+                } else {
+                    Node m = new Node(n.data, null);
+                    tail1.next = m;
+                    tail1 = tail1.next;
+                }
+                if (i == (length / 2) - 1) tail1.next = head1;
+            }
+        }
+        printCircularLinkedList(head1);
+        System.out.println();
+        printCircularLinkedList(head2);
+    }
 
+    //Deletion from a Circular Linked List
+    public void deletionCircular(Node head, int keyData) {
+        Node n = head;
+        if (head.data == keyData) {
+            while (n.next != head) n = n.next;
+            n.next = n.next.next;
+            head = n.next;
+        } else {
+            while (n.next != head) {
+                if (n.next.data == keyData) {
+                    n.next = n.next.next;
+                }
+                n = n.next;
+            }
+        }
+        printCircularLinkedList(head);
+    }
+
+    //Merge Sort for Doubly Linked List TODO
+    //Find pairs with given sum in doubly linked list
+    public void pairSum(Node head, int k) {
+        for (Node n = head; n != null; n = n.next) {
+            if (n.data > k || (n.next != null && n.data + n.next.data > k)) break;
+
+            for (Node m = n.next; m != null; m = m.next)
+                if (n.data + m.data == k) System.out.println("(" + m.data + ", " + n.data + ")");
+        }
+    }
+
+    //Insert value in sorted way in a sorted doubly linked list
+    public void insertInSortedDoubly(Node head, int k) {
+        Node m = new Node(k, null);
+        if (k < head.data) {
+            m.next = head;
+            head = m;
+        } else {
+            for (Node n = head; n != null; n = n.next) {
+                if (n.data <= k && (n.next == null || n.next.data >= k)) {
+                    m.next = n.next;
+                    n.next = m;
+                    break;
+                }
+            }
+        }
+        printLinkedList(head);
+    }
+
+    //Remove duplicates from an unsorted doubly linked list
+    public void removeDuplicate(Node head) {
+            List<Integer> list = new java.util.LinkedList<>();
+            for (Node n = head; n != null; n = n.next) {
+                if (list.contains(n.data)) deleteNode(head, n);
+                else list.add(n.data);
+            }
+        printLinkedList(head);
+    }
+    Node deleteNode(Node head_ref, Node del)
+    {
+        if (head_ref == null || del == null) return head_ref;
+        if (head_ref == del) head_ref = del.next;
+        if (del.next != null) del.next.prev = del.prev;
+        if (del.prev != null) del.prev.next = del.next;
+        return head_ref;
+    }
+
+    //Rotate Doubly linked list by N nodes
+    public void rotateLinkedList(Node head, int k){
+        Node start = getIndexedValue(head, k);
+        Node n = start;
+        while(n.next!=null) n=n.next;
+        n.next=head;
+        head=start;
+        n=head;
+        while( n!=start.prev) n=n.next;
+        n.next=null;
+        printLinkedList(head);
+    }
+
+    //Modify contents of Linked List
+    public void modifySingly(Node head){
+        int len = getLength(head);
+        Node n=head;
+        for(int i=1; i<=len/2; i++, n=n.next)
+            n.data = n.data - getIndexedValue(head, len-i).data;
+        printLinkedList(head);
+    }
 }
