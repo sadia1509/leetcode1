@@ -1,13 +1,33 @@
 package common;
 
 import dataStructure.linear.*;
+import dataStructure.nonLinear.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class DSA {
     public static void runEasy() {
-        LinkedList linkedList = new LinkedList();
-        linkedList.modifySingly(linkedList.makeLinkedList(new int[]{10,4,5,3,6}));
+        /* NON-LINEAR */
+        Graph graph = new Graph();
+        graph.makeTransitiveClosureGraph();
+        graph.transitiveClosureDfs(graph.getGraph());
+//        graph.makeIntegerDisconnectedGraph();
+//        graph.disconnectedBfsTraversal(graph.getGraph(), 5);
+//        graph.makeIntegerGraph();
+//        graph.bfsTraversal(graph.getGraph(), 4);
+//        graph.dfsTraversal(graph.getGraph(), 3);
+//        graph.makeStringGraph();
+//        graph.convertToTranspose(graph.getGraph());
+
+
+
+
+
+
+        /* LINEAR */
+//        LinkedList linkedList = new LinkedList();
+//        linkedList.modifySingly(linkedList.makeLinkedList(new int[]{10,4,5,3,6}));
 //        linkedList.rotateLinkedList(linkedList.makeDoublyLinkedList(new int[]{1,2,3,4,5}),3);
 //        linkedList.removeDuplicate(linkedList.makeDoublyLinkedList(new int[]{1,2,3,2,2,4,2,2,4,4,5}));
 //        linkedList.insertInSortedDoubly(linkedList.makeDoublyLinkedList(new int[]{2,4,5,6,8,9}), 11);
