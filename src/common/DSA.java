@@ -10,8 +10,12 @@ public class DSA {
     public static void runEasy() {
         /* NON-LINEAR */
         Graph graph = new Graph();
-        graph.makeTransitiveClosureGraph();
-        graph.transitiveClosureDfs(graph.getGraph());
+        graph.makeNonCyclicGraph();
+        graph.detectCycleDfs(graph.getGraph(), 4);
+        graph.makeCyclicGraph();
+        graph.detectCycleDfs(graph.getGraph(), 4);
+//        graph.makeTransitiveClosureGraph();
+//        graph.transitiveClosureDfs(graph.getGraph());
 //        graph.makeIntegerDisconnectedGraph();
 //        graph.disconnectedBfsTraversal(graph.getGraph(), 5);
 //        graph.makeIntegerGraph();
