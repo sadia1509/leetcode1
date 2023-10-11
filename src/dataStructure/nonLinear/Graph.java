@@ -264,5 +264,6 @@ public class Graph {
     }
 
     //Detect cycle in a direct graph using colors
+    //Detect a negative cycle in a Graph | (Bellman Ford)
 
 }
