@@ -6,14 +6,23 @@ import java.util.*;
 
 public class Graph {
     Map<Object, List<Object>> graph;
+    int cycleNumber=0, n=100;
+    Vector<Integer>[] graphV= new Vector[n], cycles= new Vector[n];
 
     void addEdges(Object node, List<Object> edges) {
         graph.put(node, edges);
+    }
+    void addEdge(int u, int v) {
+//        graphV[u] = new Vector<>();
+//        graphV[v] = new Vector<>();
+        graphV[u].add(v);
+        graphV[v].add(u);
     }
 
     public Map<Object, List<Object>> getGraph() {
         return graph;
     }
+    public Vector<Integer>[] getGraphV(){return graphV;}
 
     public void makePracticeGraph() {
         graph = new HashMap<>();
@@ -271,6 +280,59 @@ public class Graph {
         ShortestPath shortestPath = new ShortestPath();
         shortestPath.makeNegativeCyclicGraph();
         shortestPath.bellmanFord(shortestPath.getGraph(), new Object[]{1,2,3,4}, 1);
+    }
+
+    public void makeGraphUsingVector(){
+        for (int i = 0; i < n; i++) {
+            graphV[i] = new Vector<>();
+            cycles[i] = new Vector<>();
+        }
+        addEdge(1, 2);
+        addEdge(2, 3);
+        addEdge(3, 4);
+        addEdge(4, 6);
+        addEdge(4, 7);
+        addEdge(5, 6);
+        addEdge(3, 5);
+        addEdge(7, 8);
+        addEdge(6, 10);
+        addEdge(5, 9);
+        addEdge(10, 9);
+        addEdge(10, 11);
+        addEdge(11, 12);
+        addEdge(11, 13);
+        addEdge(12, 13);
+    }
+
+    //Cycles of length n in an undirected and connected graph
+   public void dfsCycles(int u, int p, int[] color, int[] parent, Vector<Integer>[] graph) {
+        int partiallyVisited=1, completelyVisited=2;
+        if (color[u] == completelyVisited) return;
+        if (color[u] == partiallyVisited) {
+            Vector<Integer> v = new Vector<>();
+            int cur = p;
+            v.add(cur);
+            while (cur != u) {
+                cur = parent[cur];
+                v.add(cur);
+            }
+            cycles[cycleNumber++] = v;
+            return;
+        }
+        parent[u] = p;
+        color[u] = partiallyVisited;
+        for (int v : graph[u]) {
+            if (v == parent[u])  continue;
+            dfsCycles(v, u, color, parent, graph);
+        }
+        color[u] = completelyVisited;
+    }
+    public void printCycles() {
+        for (int i = 0; i < cycleNumber; i++) {
+            System.out.printf("Cycle Number %d: ", i + 1);
+            for (int x : cycles[i]) System.out.printf("%d ", x);
+            System.out.println();
+        }
     }
 
 }

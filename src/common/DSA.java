@@ -6,12 +6,15 @@ import dataStructure.nonLinear.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 public class DSA {
     public static void runEasy() {
         /* Algorithms */
         ShortestPath shortestPath = new ShortestPath();
-
+        Object [][] graphArray = shortestPath.floydWarshall(shortestPath.makeTwoDArrayGraph());
+        shortestPath.printTwoDArray(graphArray);
+        System.out.println("The graph has negative cycle: "+shortestPath.isNegativeCycle(graphArray));
 //        shortestPath.makeCyclicGraph();
 //        shortestPath.dijkstra(shortestPath.getGraph(), new Object[]{1,2,3,4,5,6}, 1);
 //        shortestPath.makeNegativeCyclicGraph();
@@ -19,7 +22,10 @@ public class DSA {
 
 
         /* NON-LINEAR */
-//        Graph graph = new Graph();
+        Graph graph = new Graph();
+//        graph.makeGraphUsingVector();
+//        graph.dfsCycles(1,0,  new int[100], new int[100], graph.getGraphV());
+//        graph.printCycles();
 //        graph.makeNonCyclicGraph();
 //        graph.detectCycleDfs(graph.getGraph(), 4);
 //        graph.makeCyclicGraph();
