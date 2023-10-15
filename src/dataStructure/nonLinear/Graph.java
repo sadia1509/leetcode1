@@ -1,5 +1,7 @@
 package dataStructure.nonLinear;
 
+import algorithms.ShortestPath;
+
 import java.util.*;
 
 public class Graph {
@@ -265,5 +267,10 @@ public class Graph {
 
     //Detect cycle in a direct graph using colors
     //Detect a negative cycle in a Graph | (Bellman Ford)
+    public void detectNegativeCycle(){
+        ShortestPath shortestPath = new ShortestPath();
+        shortestPath.makeNegativeCyclicGraph();
+        shortestPath.bellmanFord(shortestPath.getGraph(), new Object[]{1,2,3,4}, 1);
+    }
 
 }

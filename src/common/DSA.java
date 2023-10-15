@@ -1,5 +1,6 @@
 package common;
 
+import algorithms.ShortestPath;
 import dataStructure.linear.*;
 import dataStructure.nonLinear.*;
 
@@ -8,12 +9,21 @@ import java.util.List;
 
 public class DSA {
     public static void runEasy() {
+        /* Algorithms */
+        ShortestPath shortestPath = new ShortestPath();
+
+//        shortestPath.makeCyclicGraph();
+//        shortestPath.dijkstra(shortestPath.getGraph(), new Object[]{1,2,3,4,5,6}, 1);
+//        shortestPath.makeNegativeCyclicGraph();
+//        shortestPath.bellmanFord(shortestPath.getGraph(), new Object[]{1,2,3,4}, 1);
+
+
         /* NON-LINEAR */
-        Graph graph = new Graph();
-        graph.makeNonCyclicGraph();
-        graph.detectCycleDfs(graph.getGraph(), 4);
-        graph.makeCyclicGraph();
-        graph.detectCycleDfs(graph.getGraph(), 4);
+//        Graph graph = new Graph();
+//        graph.makeNonCyclicGraph();
+//        graph.detectCycleDfs(graph.getGraph(), 4);
+//        graph.makeCyclicGraph();
+//        graph.detectCycleDfs(graph.getGraph(), 4);
 //        graph.makeTransitiveClosureGraph();
 //        graph.transitiveClosureDfs(graph.getGraph());
 //        graph.makeIntegerDisconnectedGraph();
