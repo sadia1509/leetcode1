@@ -12,9 +12,9 @@ public class DSA {
     public static void runEasy() {
         /* Algorithms */
         ShortestPath shortestPath = new ShortestPath();
-        Object [][] graphArray = shortestPath.floydWarshall(shortestPath.makeTwoDArrayGraph());
-        shortestPath.printTwoDArray(graphArray);
-        System.out.println("The graph has negative cycle: "+shortestPath.isNegativeCycle(graphArray));
+//        Object [][] graphArray = shortestPath.floydWarshall(shortestPath.makeTwoDArrayGraph());
+//        shortestPath.printTwoDArray(graphArray);
+//        System.out.println("The graph has negative cycle: "+shortestPath.isNegativeCycle(graphArray));
 //        shortestPath.makeCyclicGraph();
 //        shortestPath.dijkstra(shortestPath.getGraph(), new Object[]{1,2,3,4,5,6}, 1);
 //        shortestPath.makeNegativeCyclicGraph();
@@ -46,6 +46,13 @@ public class DSA {
 
 
         /* LINEAR */
+        StackClass stack = new StackClass();
+//        stack.infixToPrefix("A*B+C/D-E*F+G");
+//        stack.infixToPrefix("(A + B) * (C - D) / E");
+//        stack.infixToPrefix("(A + B) * (C - D) / E^(F^P)");
+//        stack.infixToPostfix("A*B+C/D-E*F+G");
+//        stack.infixToPostfix("(A + B) * (C - D) / E");
+//        stack.infixToPostfix("(A + B) * (C - D) / E^(F^P)");
 //        LinkedList linkedList = new LinkedList();
 //        linkedList.modifySingly(linkedList.makeLinkedList(new int[]{10,4,5,3,6}));
 //        linkedList.rotateLinkedList(linkedList.makeDoublyLinkedList(new int[]{1,2,3,4,5}),3);
