@@ -22,6 +22,21 @@ public class DSA {
 
 
         /* NON-LINEAR */
+        Tree tree = new Tree();
+        tree.inOrderTraversal(tree.makeTree());
+        System.out.println();
+        tree.preOrderTraversal(tree.makeTree());
+        System.out.println();
+        tree.postOrderTraversal(tree.makeTree());
+        System.out.println();
+        tree.levelOrderTraversal(tree.makeTree());
+        System.out.println();
+        System.out.println("Max depth: " + tree.maxDepth(tree.makeTree()));
+        System.out.println("Depth of a specific node: " + tree.depth(tree.makeTree(), tree.node, 0));
+        System.out.println("Level of a specific node: " + tree.level(tree.makeTree(), tree.node));
+        System.out.println("Height of a specific node: " + tree.height(tree.makeTree(), tree.node));
+
+
         Graph graph = new Graph();
 //        graph.makeGraphUsingVector();
 //        graph.dfsCycles(1,0,  new int[100], new int[100], graph.getGraphV());
