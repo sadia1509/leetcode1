@@ -23,6 +23,7 @@ public class DSA {
         /* NON-LINEAR */
         Tree tree = new Tree();
 //        tree.makeTree();
+//        System.out.println("Element Found: " + tree.searchInTree(tree.root, 6));
 //        System.out.print("In Order: \t\t");
 //        tree.inOrderTraversal(tree.root);
 //        System.out.print("\nPre Order: \t\t");
@@ -70,11 +71,15 @@ public class DSA {
 
 
         /* LINEAR */
+        QueueClass queue = new QueueClass();
+
+
+
         StackClass stack = new StackClass();
-        Queue<Integer> numbers = new java.util.LinkedList<>();
-        numbers.add(10); numbers.add(20); numbers.add(30); numbers.add(40); numbers.add(50);
-        numbers.add(60); numbers.add(70); numbers.add(80); numbers.add(90); numbers.add(100);
-        stack.reverseQueue(numbers);
+//        Queue<Integer> numbers = new java.util.LinkedList<>();
+//        numbers.add(10); numbers.add(20); numbers.add(30); numbers.add(40); numbers.add(50);
+//        numbers.add(60); numbers.add(70); numbers.add(80); numbers.add(90); numbers.add(100);
+//        stack.reverseQueue(numbers);
 //        List<String> words = new ArrayList<>();
 //        words.add("sad"); words.add("mad"); words.add("tab");
 //        stack.reverseWords(words);

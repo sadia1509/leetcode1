@@ -53,14 +53,15 @@ public class Tree {
         return node;
     }
 
-    public int getTotalNodeCount(TreeNode root, int count){
-        if(root!=null){
-            count = count+1;
+    public int getTotalNodeCount(TreeNode root, int count) {
+        if (root != null) {
+            count = count + 1;
             count = getTotalNodeCount(root.left, count);
             count = getTotalNodeCount(root.right, count);
         }
         return count;
     }
+
     public void printMe(TreeNode node) {
         if (node != null) System.out.println(node.value);
         else System.out.println("NULL!");
@@ -118,7 +119,7 @@ public class Tree {
     //depth
     public int depth(TreeNode root, TreeNode node, int currentDepth) {
         int depth = -1;
-        if(root!=null && node!=null) {
+        if (root != null && node != null) {
             if (root.value == node.value) return currentDepth;
             depth = depth(root.left, node, currentDepth + 1);
             if (depth != -1) return depth;
@@ -174,22 +175,33 @@ public class Tree {
     }
 
     //Check if removing an edge can divide a Binary Tree in two halves
-    public void isDivisibleByTwoHalves(TreeNode root){
+    public void isDivisibleByTwoHalves(TreeNode root) {
         int leftSize = getTotalNodeCount(root.left, 0);
         int rightSize = getTotalNodeCount(root.right, 0);
-        if(leftSize == rightSize + 1 || rightSize == leftSize + 1) System.out.println("Two equal halves");
+        if (leftSize == rightSize + 1 || rightSize == leftSize + 1) System.out.println("Two equal halves");
         else System.out.println("Sorry can't be divided halves");
     }
 
     //Check whether a given binary tree is perfect or not
-    public void isPerfectBinary(TreeNode root){
-        int limit = maxDepth(root), totalNodes=0;
-        for(int i=0; i<limit; i++)   totalNodes += Math.pow(2,i);
-        if(totalNodes == getTotalNodeCount(root, 0))
+    public void isPerfectBinary(TreeNode root) {
+        int limit = maxDepth(root), totalNodes = 0;
+        for (int i = 0; i < limit; i++) totalNodes += Math.pow(2, i);
+        if (totalNodes == getTotalNodeCount(root, 0))
             System.out.println("Perfect Binary Tree!!!");
         else System.out.println("Not a perfect binary tree!");
     }
 
+    //Iterative searching in Tree
+    public boolean searchInTree(TreeNode root, Object elem) {
+        boolean isFound = false;
+        if (root != null) {
+            if (root.value == elem) return true;
+            isFound = searchInTree(root.left, elem);
+            if (isFound) return true;
+            isFound = searchInTree(root.right, elem);
+        }
+        return isFound;
+    }
 }
 
 class TreeNode {
