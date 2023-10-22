@@ -1,6 +1,6 @@
 package common;
 
-import algorithms.ShortestPath;
+import algorithms.*;
 import dataStructure.linear.*;
 import dataStructure.nonLinear.*;
 
@@ -23,18 +23,28 @@ public class DSA {
 
         /* NON-LINEAR */
         Tree tree = new Tree();
-//        tree.inOrderTraversal(tree.makeTree());
-//        System.out.println();
-//        tree.preOrderTraversal(tree.makeTree());
-//        System.out.println();
-//        tree.postOrderTraversal(tree.makeTree());
-//        System.out.println();
-//        tree.levelOrderTraversal(tree.makeTree());
-//        System.out.println();
-//        System.out.println("Max depth: " + tree.maxDepth(tree.makeTree()));
-//        System.out.println("Depth of a specific node: " + tree.depth(tree.makeTree(), tree.node, 0));
-//        System.out.println("Level of a specific node: " + tree.level(tree.makeTree(), tree.node));
-//        System.out.println("Height of a specific node: " + tree.height(tree.makeTree(), tree.node));
+//        tree.makeTree();
+//        System.out.print("In Order: \t\t");
+//        tree.inOrderTraversal(tree.root);
+//        System.out.print("\nPre Order: \t\t");
+//        tree.preOrderTraversal(tree.root);
+//        System.out.print("\nPost Order: \t");
+//        tree.postOrderTraversal(tree.root);
+//        System.out.print("\nLevel Order: \t");
+//        tree.levelOrderTraversal(tree.root);
+//        System.out.println("\nMax depth: " + tree.maxDepth(tree.root));
+//        System.out.println("Depth of a specific node: " + tree.depth(tree.root, tree.node, 0));
+//        System.out.println("Level of a specific node: " + tree.level(tree.root, tree.node));
+//        System.out.println("Height of a specific node: " + tree.height(tree.node));
+//        System.out.println("The binary tree is a sum tree: " + tree.isSumTree(tree.makeSumTree(new int[]{26,10,3,4,6,-1,3}, 0)));
+//        tree.makeTreeFromArray(new Object[]{6,3,5,7,8,1,3},0);
+//        tree.printMe(tree.getSpecificNode(tree.root, 7));
+//        tree.printMe(tree.findParent(tree.root, tree.getSpecificNode(tree.root, 7)));
+//        tree.cousinCheck(tree.root, tree.getSpecificNode(tree.root,3), tree.getSpecificNode(tree.root, 5));
+//        System.out.println(tree.getTotalNodeCount(tree.root, 0));
+//        tree.makeTreeFromArray(new Object[]{5,1,6,3,null,7,4},0);
+//        tree.isDivisibleByTwoHalves(tree.root);
+//        tree.isPerfectBinary(tree.root);
 
 
         Graph graph = new Graph();
@@ -62,13 +72,19 @@ public class DSA {
 
         /* LINEAR */
         StackClass stack = new StackClass();
+//        stack.PostfixToInfix("AB*CD/+EF*-G+");
+//        stack.PostfixToInfix("AB+CD-*EFP^^/");
+//        stack.PrefixToInfix("+-+*AB/CD*EFG");
+//        stack.PrefixToInfix("/*+AB-CD^E^FP");
 //        stack.infixToPrefix("A*B+C/D-E*F+G");
-//        stack.infixToPrefix("(A + B) * (C - D) / E");
-//        stack.infixToPrefix("(A + B) * (C - D) / E^(F^P)");
+//        stack.infixToPrefix("(A+B)*(C-D)/E");
+//        stack.infixToPrefix("(A+B)*(C-D)/E^(F^P)");
 //        stack.infixToPostfix("A*B+C/D-E*F+G");
-//        stack.infixToPostfix("(A + B) * (C - D) / E");
-//        stack.infixToPostfix("(A + B) * (C - D) / E^(F^P)");
-//        LinkedList linkedList = new LinkedList();
+//        stack.infixToPostfix("(A+B)*(C-D)/E");
+//        stack.infixToPostfix("(A+B)*(C-D)/E^(F^P)");
+
+
+        LinkedList linkedList = new LinkedList();
 //        linkedList.modifySingly(linkedList.makeLinkedList(new int[]{10,4,5,3,6}));
 //        linkedList.rotateLinkedList(linkedList.makeDoublyLinkedList(new int[]{1,2,3,4,5}),3);
 //        linkedList.removeDuplicate(linkedList.makeDoublyLinkedList(new int[]{1,2,3,2,2,4,2,2,4,4,5}));
@@ -95,7 +111,7 @@ public class DSA {
 
 
 
-//        Array array = new Array();
+        Array array = new Array();
 //        array.sqrtDecompositionAlgorithm(new int[]{1, 1, 2, 1, 3, 4, 5, 2, 8}, 0, 8);
 //        array.moAlgorithm(new int[]{1, 1, 2, 1, 3, 4, 5, 2, 8}, List.of(new int[]{0, 4}, new int[]{1, 3}, new int[]{2, 4}) );
 //        array.mostOccurrence(new int[]{7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9}, 4);
@@ -132,17 +148,18 @@ public class DSA {
 //        array.threeElements(new int[]{4, 1, 6, 0, -1, -10, 3});
 
 
-//        Sort sort = new Sort();
+        Sort sort = new Sort();
 //        sort.insertionSort(new int[]{4, 1, 6, 0, -1, -10, 3});
 //        sort.selectionSort(new int[]{4,5,6,0,-1,-10, 1});
 //
-//        Search search = new Search();
+        Search search = new Search();
 //        System.out.println(search.binarySearch(new int []{2, 5, 6, 8, 9, 10}, 0, 5 ,6));
 //        System.out.println(search.linerSearch2D(new String[][]{{"hay", "hay"}, {"hay", "hay"},
 //                {"hay", "hay"}, {"hay", "hay"}, {"needle", "hay"}, {"hay", "hay"}}, "needle"));
 //        System.out.println(search.linearSearch(new int []{2, 3, 4, 10, 40}, 10));
 //
-//        Recursion recursion = new Recursion();
+
+        Recursion recursion = new Recursion();
 //        System.out.println(recursion.getTotal(new ArrayList<>(Arrays.asList(3,5,6,9))));
 //        System.out.println(recursion.reverseString("Sadia"));
 //        System.out.println(recursion.factorial(4));

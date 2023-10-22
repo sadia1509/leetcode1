@@ -117,4 +117,37 @@ public class StackClass {
             reverseStack.add(actual);
         }
     }
+
+    //Postfix to Infix Conversion using Stack
+    public void PostfixToInfix(String expression) {
+        System.out.println(expression);
+        Stack<Object> stack = new Stack<>();
+        List<Character> operators = List.of('+', '-', '/', '*', '^');
+        for (int i = 0; i < expression.length(); i++) {
+            char current = expression.charAt(i);
+            if (operators.contains(current)) {
+                Object a = stack.pop();
+                Object b = stack.pop();
+                stack.add("(" + b + current + a + ")");
+            } else stack.add(current);
+        }
+        System.out.println(stack.peek());
+    }
+
+
+    //Postfix to Infix Conversion using Stack
+    public void PrefixToInfix(String expression) {
+        System.out.println(expression);
+        Stack<Object> stack = new Stack<>();
+        List<Character> operators = List.of('+', '-', '/', '*', '^');
+        for (int i = expression.length() - 1; i >= 0; i--) {
+            char current = expression.charAt(i);
+            if (operators.contains(current)) {
+                Object a = stack.pop();
+                Object b = stack.pop();
+                stack.add("(" + a + current + b + ")");
+            } else stack.add(current);
+        }
+        System.out.println(stack.peek());
+    }
 }
