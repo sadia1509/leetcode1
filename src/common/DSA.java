@@ -2,11 +2,10 @@ package common;
 
 import algorithms.*;
 import dataStructure.linear.*;
+import dataStructure.linear.LinkedList;
 import dataStructure.nonLinear.*;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 public class DSA {
     public static void runEasy() {
@@ -72,6 +71,23 @@ public class DSA {
 
         /* LINEAR */
         StackClass stack = new StackClass();
+        Queue<Integer> numbers = new java.util.LinkedList<>();
+        numbers.add(10); numbers.add(20); numbers.add(30); numbers.add(40); numbers.add(50);
+        numbers.add(60); numbers.add(70); numbers.add(80); numbers.add(90); numbers.add(100);
+        stack.reverseQueue(numbers);
+//        List<String> words = new ArrayList<>();
+//        words.add("sad"); words.add("mad"); words.add("tab");
+//        stack.reverseWords(words);
+//        Stack<Object> dummyStack = new Stack();
+//        dummyStack.add("a"); dummyStack.add("b"); dummyStack.add("c");
+//        stack.reverseStack(dummyStack);
+//        System.out.println();
+//        while (!dummyStack.isEmpty()) System.out.print(dummyStack.pop()+ " ");
+//        System.out.println("Parenthesis checking: " + stack.checkParenthesis("dd(dff[{sad}]ff)s"));
+//        stack.PostfixToPrefix("AB*CD/+EF*-G+");
+//        stack.PostfixToPrefix("AB+CD-*EFP^^/");
+//        stack.PrefixToPostfix("+-+*AB/CD*EFG");
+//        stack.PrefixToPostfix("/*+AB-CD^E^FP");
 //        stack.PostfixToInfix("AB*CD/+EF*-G+");
 //        stack.PostfixToInfix("AB+CD-*EFP^^/");
 //        stack.PrefixToInfix("+-+*AB/CD*EFG");

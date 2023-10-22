@@ -1,6 +1,7 @@
 package dataStructure.linear;
 
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class StackClass {
@@ -135,7 +136,7 @@ public class StackClass {
     }
 
 
-    //Postfix to Infix Conversion using Stack
+    //Prefix to Infix Conversion using Stack
     public void PrefixToInfix(String expression) {
         System.out.println(expression);
         Stack<Object> stack = new Stack<>();
@@ -149,5 +150,107 @@ public class StackClass {
             } else stack.add(current);
         }
         System.out.println(stack.peek());
+    }
+
+    //Postfix to Prefix Conversion using Stack
+    public void PostfixToPrefix(String expression) {
+        System.out.println(expression);
+        Stack<Object> stack = new Stack<>();
+        List<Character> operators = List.of('+', '-', '/', '*', '^');
+        for (int i = 0; i < expression.length(); i++) {
+            char current = expression.charAt(i);
+            if (operators.contains(current)) {
+                Object a = stack.pop();
+                Object b = stack.pop();
+                stack.add("" + current + b + a);
+            } else stack.add(current);
+        }
+        System.out.println(stack.peek());
+    }
+
+    //Prefix to Postfix Conversion using Stack
+    public void PrefixToPostfix(String expression) {
+        System.out.println(expression);
+        Stack<Object> stack = new Stack<>();
+        List<Character> operators = List.of('+', '-', '/', '*', '^');
+        for (int i = expression.length() - 1; i >= 0; i--) {
+            char current = expression.charAt(i);
+            if (operators.contains(current)) {
+                Object a = stack.pop();
+                Object b = stack.pop();
+                stack.add("" + a + b + current);
+            } else stack.add(current);
+        }
+        System.out.println(stack.peek());
+    }
+
+    //Check for balanced parentheses in an expression
+    public boolean checkParenthesis(String expression) {
+        System.out.print(expression + " ");
+        Stack<Character> stack = new Stack<>();
+        String parenthesis = "({[]})";
+        for (int i = 0; i < expression.length(); i++) {
+            char current = expression.charAt(i);
+            if (!parenthesis.contains(current + "")) continue;
+            if (parenthesis.substring(0, 3).contains(current + ""))
+                stack.add(current);
+            else {
+                if(stack.isEmpty()) return false;
+                switch (current) {
+                    case ')':
+                        if (stack.pop() != '(') return false;
+                        break;
+                    case '}':
+                        if (stack.pop() != '{') return false;
+                        break;
+                    case ']':
+                        if (stack.pop() != '[') return false;
+                        break;
+                }
+            }
+        }
+        if (!stack.isEmpty()) return false;
+        else return true;
+    }
+
+    //Reverse a stack using recursion
+    public void reverseStack(Stack<Object> stack){
+        if (!stack.isEmpty()) {
+            Object temp = stack.pop();
+            reverseStack(stack);
+            System.out.print(temp + " ");
+            storeTheReverseStack(stack, temp);
+        }
+    }
+    void storeTheReverseStack(Stack<Object> stack, Object item){
+        if(stack.isEmpty()) stack.add(item);
+        else {
+            Object top = stack.pop();
+            storeTheReverseStack(stack, item);
+            stack.push(top);
+        }
+    }
+
+    //Reverse individual words
+    public void reverseWords(List<String> words){
+        Stack<Character> stack;
+        for (int i=0; i<words.size(); i++){
+            stack = new Stack<>();
+            String word = words.get(i);
+            for(int j=0; j<word.length(); j++) stack.add(word.charAt(j));
+            word="";
+            while (!stack.isEmpty()) word += stack.pop();
+            words.set(i, word);
+        }
+        System.out.println(words);
+    }
+
+    //Reversing a Queue using stack
+    public void reverseQueue(Queue<Integer> queue){
+        System.out.println(queue);
+        Stack<Integer> stack = new Stack<>();
+        while (!queue.isEmpty()) stack.add(queue.remove());
+        while (!stack.isEmpty()) queue.add(stack.pop());
+        System.out.println(queue);
     }
 }
